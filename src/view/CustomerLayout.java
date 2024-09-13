@@ -33,6 +33,7 @@ public class CustomerLayout extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         NavigationPannel = new javax.swing.JPanel();
         ManageCustomerButton = new javax.swing.JButton();
+        ManageItemButton = new javax.swing.JButton();
         BodyPannel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,13 +63,23 @@ public class CustomerLayout extends javax.swing.JFrame {
             }
         });
 
+        ManageItemButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ManageItemButton.setText("Mange Item");
+        ManageItemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManageItemButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout NavigationPannelLayout = new javax.swing.GroupLayout(NavigationPannel);
         NavigationPannel.setLayout(NavigationPannelLayout);
         NavigationPannelLayout.setHorizontalGroup(
             NavigationPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NavigationPannelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(ManageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(NavigationPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ManageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ManageItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         NavigationPannelLayout.setVerticalGroup(
@@ -76,7 +87,9 @@ public class CustomerLayout extends javax.swing.JFrame {
             .addGroup(NavigationPannelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ManageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(479, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout BodyPannelLayout = new javax.swing.GroupLayout(BodyPannel);
@@ -123,6 +136,10 @@ public class CustomerLayout extends javax.swing.JFrame {
     private void ManageCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomerButtonActionPerformed
         loadCustomerLayout();
     }//GEN-LAST:event_ManageCustomerButtonActionPerformed
+
+    private void ManageItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageItemButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ManageItemButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,6 +189,7 @@ public class CustomerLayout extends javax.swing.JFrame {
     private javax.swing.JPanel BodyPannel;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton ManageCustomerButton;
+    private javax.swing.JButton ManageItemButton;
     private javax.swing.JPanel NavigationPannel;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
