@@ -4,6 +4,10 @@
  */
 package mvc.test;
 
+import db.DBConnection;
+import java.sql.SQLException;
+import view.CustomerLayout;
+
 /**
  *
  * @author vinod
@@ -13,8 +17,9 @@ public class MVCTest {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        DBConnection.getInstance().getConnection();
+        new CustomerLayout().setVisible(true);
     }
     
 }
