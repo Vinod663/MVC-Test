@@ -26,23 +26,215 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        custIdLab = new javax.swing.JLabel();
+        CustTitleLab = new javax.swing.JLabel();
+        NameLab = new javax.swing.JLabel();
+        DOBLab = new javax.swing.JLabel();
+        SalaryLab = new javax.swing.JLabel();
+        SalaryLab1 = new javax.swing.JLabel();
+        PostalCodeLab = new javax.swing.JLabel();
+        idText = new javax.swing.JTextField();
+        MRRadio = new javax.swing.JRadioButton();
+        MsRadio = new javax.swing.JRadioButton();
+        MissRadio = new javax.swing.JRadioButton();
+        NameText = new javax.swing.JTextField();
+        DOBLab1 = new javax.swing.JLabel();
+        YearCombo = new javax.swing.JComboBox<>();
+        DOBLab2 = new javax.swing.JLabel();
+        MonthCombo = new javax.swing.JComboBox<>();
+        DayCombo = new javax.swing.JComboBox<>();
+        DOBLab3 = new javax.swing.JLabel();
+        SalaryText = new javax.swing.JTextField();
+        AddressText = new javax.swing.JTextField();
+        PostalCodeText = new javax.swing.JTextField();
+        CityLab = new javax.swing.JLabel();
+        CityText = new javax.swing.JTextField();
+        ProvinceLab = new javax.swing.JLabel();
+        ProvinceText = new javax.swing.JTextField();
+        SaveButton = new javax.swing.JButton();
+        UpdateButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Customer");
+
+        custIdLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        custIdLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        custIdLab.setText("Customer ID");
+
+        CustTitleLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CustTitleLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        CustTitleLab.setText("Customer Title");
+
+        NameLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        NameLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NameLab.setText("Customer Name");
+
+        DOBLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        DOBLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DOBLab.setText("Date of Birth");
+
+        SalaryLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SalaryLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SalaryLab.setText("Salary");
+
+        SalaryLab1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SalaryLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        SalaryLab1.setText("Address");
+
+        PostalCodeLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PostalCodeLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        PostalCodeLab.setText("Postal Code");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 194, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(custIdLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CustTitleLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NameLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DOBLab)
+                            .addComponent(SalaryLab)
+                            .addComponent(SalaryLab1)
+                            .addComponent(PostalCodeLab))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(64, 64, 64))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(custIdLab)
+                .addGap(15, 15, 15)
+                .addComponent(CustTitleLab)
+                .addGap(15, 15, 15)
+                .addComponent(NameLab)
+                .addGap(18, 18, 18)
+                .addComponent(DOBLab)
+                .addGap(18, 18, 18)
+                .addComponent(SalaryLab)
+                .addGap(18, 18, 18)
+                .addComponent(SalaryLab1)
+                .addGap(18, 18, 18)
+                .addComponent(PostalCodeLab)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        idText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        idText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idTextActionPerformed(evt);
+            }
+        });
+
+        MRRadio.setText("Mr");
+        MRRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MRRadioActionPerformed(evt);
+            }
+        });
+
+        MsRadio.setText("Ms");
+        MsRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MsRadioActionPerformed(evt);
+            }
+        });
+
+        MissRadio.setText("Miss");
+        MissRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MissRadioActionPerformed(evt);
+            }
+        });
+
+        NameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameTextActionPerformed(evt);
+            }
+        });
+
+        DOBLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DOBLab1.setText("Year");
+
+        YearCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", " " }));
+
+        DOBLab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DOBLab2.setText("Month");
+
+        MonthCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        DayCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+
+        DOBLab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DOBLab3.setText("Day");
+
+        SalaryText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        AddressText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        PostalCodeText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        CityLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CityLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        CityLab.setText("City");
+
+        CityText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        ProvinceLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ProvinceLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ProvinceLab.setText("Province");
+
+        ProvinceText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        SaveButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SaveButton.setText("Save");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
+
+        UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        UpdateButton.setText("Update");
+        UpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateButtonActionPerformed(evt);
+            }
+        });
+
+        DeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -50,22 +242,176 @@ public class CustomerFormPannel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 645, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(MRRadio)
+                                .addGap(18, 18, 18)
+                                .addComponent(MsRadio)
+                                .addGap(18, 18, 18)
+                                .addComponent(MissRadio))
+                            .addComponent(NameText, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(SalaryText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(DOBLab1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(YearCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(DOBLab2))
+                                    .addComponent(AddressText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PostalCodeText, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(MonthCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(DOBLab3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(DayCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addComponent(CityLab)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(CityText, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(ProvinceLab)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(ProvinceText, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(46, 46, 46)
+                                        .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 66, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 90, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MRRadio)
+                            .addComponent(MsRadio)
+                            .addComponent(MissRadio))
+                        .addGap(18, 18, 18)
+                        .addComponent(NameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DOBLab1)
+                            .addComponent(YearCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DOBLab2)
+                            .addComponent(MonthCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DOBLab3)
+                            .addComponent(DayCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SalaryText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AddressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CityLab)
+                            .addComponent(CityText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ProvinceLab)
+                            .addComponent(ProvinceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PostalCodeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void idTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idTextActionPerformed
+
+    private void MRRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MRRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MRRadioActionPerformed
+
+    private void MsRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MsRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MsRadioActionPerformed
+
+    private void MissRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MissRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MissRadioActionPerformed
+
+    private void NameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameTextActionPerformed
+
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveButtonActionPerformed
+
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateButtonActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AddressText;
+    private javax.swing.JLabel CityLab;
+    private javax.swing.JTextField CityText;
+    private javax.swing.JLabel CustTitleLab;
+    private javax.swing.JLabel DOBLab;
+    private javax.swing.JLabel DOBLab1;
+    private javax.swing.JLabel DOBLab2;
+    private javax.swing.JLabel DOBLab3;
+    private javax.swing.JComboBox<String> DayCombo;
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JRadioButton MRRadio;
+    private javax.swing.JRadioButton MissRadio;
+    private javax.swing.JComboBox<String> MonthCombo;
+    private javax.swing.JRadioButton MsRadio;
+    private javax.swing.JLabel NameLab;
+    private javax.swing.JTextField NameText;
+    private javax.swing.JLabel PostalCodeLab;
+    private javax.swing.JTextField PostalCodeText;
+    private javax.swing.JLabel ProvinceLab;
+    private javax.swing.JTextField ProvinceText;
+    private javax.swing.JLabel SalaryLab;
+    private javax.swing.JLabel SalaryLab1;
+    private javax.swing.JTextField SalaryText;
+    private javax.swing.JButton SaveButton;
+    private javax.swing.JButton UpdateButton;
+    private javax.swing.JComboBox<String> YearCombo;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel custIdLab;
+    private javax.swing.JTextField idText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
