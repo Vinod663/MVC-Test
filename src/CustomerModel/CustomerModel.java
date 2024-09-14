@@ -101,4 +101,14 @@ public class CustomerModel {
      
     }
 }
+    
+    public String delete(String id) throws SQLException, ClassNotFoundException{
+        Connection connection=DBConnection.getInstance().getConnection(); 
+        String sql = "DELETE FROM customer WHERE CustID = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, id);
+        
+        int affectedRows = statement.executeUpdate();
+        return affectedRows > 0 ? "Success" : "Fail";
+    }
 }

@@ -29,4 +29,9 @@ public class CustomerController {
     public void save(CustomerDto dto) throws SQLException, ClassNotFoundException{
         customerModel.saveCustomer(dto);
     }
+    
+    public String deleteCustomer(String id) throws SQLException, ClassNotFoundException{
+      String result= customerModel.delete(id);
+      return result;
+    }
 }

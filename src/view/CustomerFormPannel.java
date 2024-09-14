@@ -407,7 +407,26 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        // TODO add your handling code here:
+        try{
+            String id=idText.getText();
+            String result=CUSTOMER_CONTROLLER.deleteCustomer(id);
+           if(result=="Success"){
+               JOptionPane.showMessageDialog(this, "Customer deleted succusfully..");
+               clearForm();
+           }
+           
+           else{
+               JOptionPane.showMessageDialog(this, "Error occured,Customer id not found!");
+           }
+           loadTable(); 
+           
+        }
+        
+        
+        catch(Exception e){
+            
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
