@@ -37,4 +37,25 @@ public class ItemModel {
         }
         return itemDtos;
     }
+    
+    public ItemDto getItem(String itemCode) throws SQLException, ClassNotFoundException{
+        Connection connection = DBConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM Item WHERE ItemCode = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, itemCode);
+        
+        ResultSet rst = statement.executeQuery();
+        
+        if(rst.next()){
+            ItemDto itemDto = new ItemDto();
+            itemDto.setItemCode(rst.getString("ItemCode"));
+            itemDto.setDescription(rst.getString("Description"));
+            itemDto.setPackSize(rst.getString("PackSize"));
+            itemDto.setUnitPrice(rst.getDouble("UnitPrice"));
+            itemDto.setQoh(rst.getInt("QtyOnHand"));
+            
+            return itemDto;
+        }
+        return null;
+    }
 }

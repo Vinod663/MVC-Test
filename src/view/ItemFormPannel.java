@@ -153,6 +153,11 @@ public class ItemFormPannel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -224,6 +229,27 @@ public class ItemFormPannel extends javax.swing.JPanel {
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteButtonActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        String itemCode = (String) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
+        System.out.println(itemCode);
+
+        try {
+
+            ItemDto itemDto = ITEM_CONTROLLER.searchItem(itemCode);
+            if (itemDto != null) {
+                ItemCodeText.setText(itemDto.getItemCode());
+                DescriptionText.setText(itemDto.getDescription());
+                PackSizeText.setText(itemDto.getPackSize());
+                QTYText.setText(Integer.toString(itemDto.getQoh()));
+                PriceText.setText(Double.toString(itemDto.getUnitPrice()));
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Found");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

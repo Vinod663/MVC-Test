@@ -20,4 +20,9 @@ public class ItemController {
         ArrayList<ItemDto> itemDtos = ITEM_MODEL.getAll();
         return itemDtos;
     }
+    
+    public ItemDto searchItem(String itemCode) throws SQLException, ClassNotFoundException{
+        ItemDto dto = ITEM_MODEL.getItem(itemCode);
+        return dto;
+    }
 }
