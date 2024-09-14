@@ -125,6 +125,11 @@ public class ItemFormPannel extends javax.swing.JPanel {
 
         SaveButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SaveButton.setText("Save");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
 
         UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         UpdateButton.setText("Update");
@@ -251,6 +256,24 @@ public class ItemFormPannel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        ItemDto itemDto=new ItemDto(
+             ItemCodeText.getText(),
+             DescriptionText.getText(),
+             PackSizeText.getText(),
+             Double.parseDouble(PriceText.getText()),
+             Integer.parseInt(QTYText.getText()));
+             
+         try {
+            String resp = ITEM_CONTROLLER.saveItem(itemDto);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            clearForm();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_SaveButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;
@@ -291,6 +314,14 @@ public class ItemFormPannel extends javax.swing.JPanel {
         }
         
         jTable1.setModel(dtm);
+    }
+ 
+ public void clearForm(){
+        ItemCodeText.setText("");
+        DescriptionText.setText("");
+        PackSizeText.setText("");
+        QTYText.setText("");
+        PriceText.setText("");
     }
 
 }

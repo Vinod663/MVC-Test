@@ -25,4 +25,9 @@ public class ItemController {
         ItemDto dto = ITEM_MODEL.getItem(itemCode);
         return dto;
     }
+    
+    public String saveItem(ItemDto itemDto) throws SQLException, ClassNotFoundException{
+        String resp = ITEM_MODEL.save(itemDto);
+        return resp;
+    }
 }
