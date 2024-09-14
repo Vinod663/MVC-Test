@@ -4,17 +4,24 @@
  */
 package view;
 
+import controller.CustomerController;
+import dto.CustomerDto;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vinod
  */
 public class CustomerFormPannel extends javax.swing.JPanel {
-
+    CustomerController CUSTOMER_CONTROLLER=new CustomerController();
     /**
      * Creates new form CustomerFormPannel
      */
     public CustomerFormPannel() {
         initComponents();
+        loadTable();
     }
 
     /**
@@ -414,4 +421,28 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void loadTable() {
+        String columns[] = {"Customer Id", "Cutomer Name", "DOB", "Salary", "Address", "Province", "Postal Code"};
+        DefaultTableModel dtm = new DefaultTableModel(columns, 0){
+           
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+            
+        };
+        jTable1.setModel(dtm);
+        
+        try{
+            List<CustomerDto> customerDtos=CUSTOMER_CONTROLLER.getAll();
+            for(CustomerDto dto:customerDtos){
+                Object[] rowData={dto.getCustID(),dto.getCustTitle(),dto.getCustName(),dto.getDOB(),dto.getSalary(),dto.getCustAddress(),dto.getCity(),dto.getProvince(),dto.getPostalCode()};
+                dtm.addRow(rowData);
+            }
+        }
+        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
 }

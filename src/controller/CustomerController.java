@@ -7,6 +7,7 @@ package controller;
 import CustomerModel.CustomerModel;
 import dto.CustomerDto;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -17,5 +18,10 @@ public class CustomerController {
     
     public void save(CustomerDto dto) throws SQLException, ClassNotFoundException{
         customerModel.saveCustomer(dto);
+    }
+    
+    public  List<CustomerDto> getAll() throws SQLException, ClassNotFoundException{
+         List<CustomerDto> customerDtos = customerModel.getAllCustomers();
+         return customerDtos;
     }
 }

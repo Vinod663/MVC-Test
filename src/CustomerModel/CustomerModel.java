@@ -6,10 +6,13 @@ package CustomerModel;
 
 import db.DBConnection;
 import dto.CustomerDto;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 /**
  *
@@ -44,4 +47,31 @@ public class CustomerModel {
      
     }
 }
+    
+    public List<CustomerDto> getAllCustomers() throws SQLException, ClassNotFoundException{
+        Connection connection=DBConnection.getInstance().getConnection();
+        String sql="SELECT * FROM customer";
+        PreparedStatement statement =connection.prepareStatement(sql);
+        
+        List<CustomerDto> customerDtos= new ArrayList<>();
+        
+        ResultSet result=statement.executeQuery();
+        
+        while(result.next()){
+            CustomerDto dto=new CustomerDto();
+            
+            dto.setCustID(result.getString("CustId"));
+            dto.setCustTitle(result.getString("CustTitle"));
+            dto.setCustName(result.getString("CustName"));
+            dto.setDOB(result.getString("DOB"));
+            dto.setSalary(result.getDouble("salary"));
+            dto.setCustAddress(result.getString("CustAddress"));
+            dto.setCity(result.getString("City"));
+            dto.setProvince(result.getString("Province"));
+            dto.setPostalCode(result.getString("PostalCode"));
+           
+            customerDtos.add(dto);
+        }
+      return customerDtos;
+    }
 }
