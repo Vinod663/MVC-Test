@@ -379,7 +379,27 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_NameTextActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        // TODO add your handling code here:
+        try{
+            CustomerDto dto=new CustomerDto();
+            dto.setCustID(idText.getText());
+            dto.setCustTitle(groupingMethod());
+            dto.setCustName(NameText.getText());
+            dto.setDOB((String)YearCombo.getSelectedItem()+"-"+(String)MonthCombo.getSelectedItem()+"-"+(String)DayCombo.getSelectedItem());
+            dto.setSalary(Double.parseDouble(SalaryText.getText()));
+            dto.setCustAddress(AddressText.getText());
+            dto.setCity(CityText.getText());
+            dto.setProvince(ProvinceText.getText());
+            dto.setPostalCode(PostalCodeText.getText());
+            
+            CUSTOMER_CONTROLLER.save(dto);
+            loadTable();
+            clearForm();
+            
+        }
+        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
@@ -523,5 +543,44 @@ public class CustomerFormPannel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
+    
+    public String groupingMethod(){
+       buttonGroup1.add(MRRadio);
+       buttonGroup1.add(MissRadio);
+       buttonGroup1.add(MsRadio);
+       String resultText;
+        if(MRRadio.isSelected()){
+            resultText="Mr";
+        }
+        else if(MissRadio.isSelected()){
+             resultText="Miss";
+        }
+        
+        else if(MsRadio.isSelected()){
+             resultText="Ms";
+        }
+        
+        else{
+            resultText="-";
+        }
+        
+        return resultText;
+    }
+    
+    private void clearForm(){
+        idText.setText("");
+        buttonGroup1.clearSelection();
+        NameText.setText("");
+        DayCombo.setSelectedIndex(0);
+        MonthCombo.setSelectedIndex(0);
+        YearCombo.setSelectedIndex(0);
+        SalaryText.setText("");
+        AddressText.setText("");
+        CityText.setText("");
+        ProvinceText.setText("");
+        PostalCodeText.setText("");
+        
+    }
+    
     
 }

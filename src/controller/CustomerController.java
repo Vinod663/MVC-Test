@@ -16,10 +16,6 @@ import java.util.List;
 public class CustomerController {
     private final CustomerModel customerModel=new CustomerModel();
     
-    public void save(CustomerDto dto) throws SQLException, ClassNotFoundException{
-        customerModel.saveCustomer(dto);
-    }
-    
     public  List<CustomerDto> getAll() throws SQLException, ClassNotFoundException{
          List<CustomerDto> customerDtos = customerModel.getAllCustomers();
          return customerDtos;
@@ -28,5 +24,9 @@ public class CustomerController {
     public CustomerDto searchCustomer(String customerCode) throws SQLException, ClassNotFoundException{
         CustomerDto dto = customerModel.getCustomer(customerCode);
         return dto;
+    }
+    
+    public void save(CustomerDto dto) throws SQLException, ClassNotFoundException{
+        customerModel.saveCustomer(dto);
     }
 }
