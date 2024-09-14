@@ -73,4 +73,20 @@ public class ItemModel {
         return resp > 0 ? "Item saved Succesfully" : "Failed Item save!";
         
     }
+    
+    public String update(ItemDto dto) throws SQLException, ClassNotFoundException{
+
+       Connection connection = DBConnection.getInstance().getConnection();
+       String sql = "UPDATE Item SET Description = ?, PackSize = ?, UnitPrice = ?, QtyOnHand = ? WHERE ItemCode = ?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, dto.getDescription());
+        statement.setString(2, dto.getPackSize());
+        statement.setDouble(3, dto.getUnitPrice());
+        statement.setInt(4, dto.getQoh());
+        statement.setString(5, dto.getItemCode());
+
+        int resp = statement.executeUpdate();
+        return resp > 0 ? "Item Updated Succesfully" : "Failed Item not Updated, Check the Item Code!";
+    }
 }

@@ -228,7 +228,21 @@ public class ItemFormPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_PackSizeTextActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-        // TODO add your handling code here:
+        ItemDto itemDto=new ItemDto(
+             ItemCodeText.getText(),
+             DescriptionText.getText(),
+             PackSizeText.getText(),
+             Double.parseDouble(PriceText.getText()),
+             Integer.parseInt(QTYText.getText()));
+             
+         try {
+            String resp = ITEM_CONTROLLER.updateItem(itemDto);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            clearForm();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
