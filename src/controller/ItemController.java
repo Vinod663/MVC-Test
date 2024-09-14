@@ -35,4 +35,9 @@ public class ItemController {
         String resp = ITEM_MODEL.update(itemDto);
         return resp;
     }
+    
+    public String deleteItem(String itemCode) throws SQLException, ClassNotFoundException{
+        String del = ITEM_MODEL.clearItem(itemCode);
+        return del;
+    }
 }

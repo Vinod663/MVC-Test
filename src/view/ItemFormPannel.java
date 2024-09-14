@@ -246,7 +246,24 @@ public class ItemFormPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        // TODO add your handling code here:
+        String itemCode = (String) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
+        System.out.println(itemCode);
+        
+        try {
+
+            String itemDto = ITEM_CONTROLLER.deleteItem(itemCode);
+            if (itemDto =="Success") {
+                JOptionPane.showMessageDialog(this, itemDto);
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Found");
+            }
+            loadTable();
+            clearForm();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        loadTable();
+        clearForm();
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked

@@ -89,4 +89,15 @@ public class ItemModel {
         int resp = statement.executeUpdate();
         return resp > 0 ? "Item Updated Succesfully" : "Failed Item not Updated, Check the Item Code!";
     }
+    
+    public String clearItem(String itemCode) throws SQLException, ClassNotFoundException{
+       Connection connection = DBConnection.getInstance().getConnection();
+        String sql = "DELETE FROM Item WHERE ItemCode = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, itemCode);
+       
+        int affectedRows = statement.executeUpdate();
+        return affectedRows > 0 ? "Success" : "Fail";
+        
+   }
 }
