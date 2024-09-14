@@ -123,22 +123,22 @@ public class CustomerFormPannel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(custIdLab)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CustTitleLab)
                 .addGap(15, 15, 15)
                 .addComponent(NameLab)
                 .addGap(18, 18, 18)
                 .addComponent(DOBLab)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SalaryLab)
                 .addGap(18, 18, 18)
                 .addComponent(SalaryLab1)
                 .addGap(18, 18, 18)
                 .addComponent(PostalCodeLab)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        idText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        idText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         idText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idTextActionPerformed(evt);
@@ -166,7 +166,7 @@ public class CustomerFormPannel extends javax.swing.JPanel {
             }
         });
 
-        NameText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NameText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NameTextActionPerformed(evt);
@@ -181,30 +181,30 @@ public class CustomerFormPannel extends javax.swing.JPanel {
         DOBLab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         DOBLab2.setText("Month");
 
-        MonthCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        MonthCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        DayCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+        DayCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         DOBLab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         DOBLab3.setText("Day");
 
-        SalaryText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SalaryText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        AddressText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AddressText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        PostalCodeText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PostalCodeText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         CityLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         CityLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         CityLab.setText("City");
 
-        CityText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CityText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         ProvinceLab.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ProvinceLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ProvinceLab.setText("Province");
 
-        ProvinceText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ProvinceText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         SaveButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SaveButton.setText("Save");
@@ -241,6 +241,11 @@ public class CustomerFormPannel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -337,9 +342,9 @@ public class CustomerFormPannel extends javax.swing.JPanel {
                             .addComponent(CityText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ProvinceLab)
                             .addComponent(ProvinceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(26, 26, 26)
                         .addComponent(PostalCodeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,7 +352,7 @@ public class CustomerFormPannel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -384,6 +389,10 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteButtonActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        searchCustomer();
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -440,9 +449,79 @@ public class CustomerFormPannel extends javax.swing.JPanel {
                 dtm.addRow(rowData);
             }
         }
-        
+       
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
+    
+    private void setRadioButton(String title){
+        if(title.equals("Mr")){
+            MRRadio.setSelected(true);
+            MissRadio.setSelected(false);
+            MsRadio.setSelected(false);
+        }
+        
+        else if(title.equals("Miss")){
+            MissRadio.setSelected(true);
+            MRRadio.setSelected(false);
+            MsRadio.setSelected(false);
+        }
+        else if(title.equals("Ms")){
+            MissRadio.setSelected(false);
+            MRRadio.setSelected(false);
+            MsRadio.setSelected(true);
+        }
+        else{
+            MRRadio.setSelected(false);
+            MissRadio.setSelected(false);
+            MsRadio.setSelected(false);
+        }
+    }
+    
+    private void setDOB(String dob){
+      String[] dobParts = dob.split("-");
+      if (dobParts.length == 3) {
+        String year = dobParts[0];  
+        String month = dobParts[1]; 
+        String day = dobParts[2];   
+        
+        DayCombo.setSelectedItem(day);
+        MonthCombo.setSelectedItem(month);
+        YearCombo.setSelectedItem(year);
+        
+        
+    } else {
+        JOptionPane.showMessageDialog(this, "Invalid date format!");
+    }
+    }
+    
+    private void searchCustomer() {
+        String custId = (String) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
+        System.out.println(custId);
+        
+        try{
+            CustomerDto dto=CUSTOMER_CONTROLLER.searchCustomer(custId);
+            if(dto!=null){
+                idText.setText(dto.getCustID());
+                setRadioButton(dto.getCustTitle());
+                setDOB(dto.getDOB());
+                NameText.setText(dto.getCustName());
+                SalaryText.setText(Double.toString(dto.getSalary()));
+                AddressText.setText(dto.getCustAddress());
+                CityText.setText(dto.getCity());
+                ProvinceText.setText(dto.getProvince());
+                PostalCodeText.setText(dto.getPostalCode());
+            }
+            
+            else {
+                JOptionPane.showMessageDialog(this, "Customer Not Found");
+            }
+        }
+    
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
+    
 }

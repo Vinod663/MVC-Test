@@ -24,4 +24,9 @@ public class CustomerController {
          List<CustomerDto> customerDtos = customerModel.getAllCustomers();
          return customerDtos;
     }
+    
+    public CustomerDto searchCustomer(String customerCode) throws SQLException, ClassNotFoundException{
+        CustomerDto dto = customerModel.getCustomer(customerCode);
+        return dto;
+    }
 }
