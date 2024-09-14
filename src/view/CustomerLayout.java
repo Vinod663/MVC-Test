@@ -139,7 +139,7 @@ public class CustomerLayout extends javax.swing.JFrame {
     }//GEN-LAST:event_ManageCustomerButtonActionPerformed
 
     private void ManageItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageItemButtonActionPerformed
-        // TODO add your handling code here:
+        loadItemLayout();
     }//GEN-LAST:event_ManageItemButtonActionPerformed
 
     /**
@@ -182,6 +182,15 @@ public class CustomerLayout extends javax.swing.JFrame {
         CustomerFormPannel custPannel=new CustomerFormPannel();
         custPannel.setSize(BodyPannel.getWidth(), BodyPannel.getHeight());
         BodyPannel.add(custPannel);
+        BodyPannel.repaint();
+        BodyPannel.revalidate();
+    }
+    
+    private void loadItemLayout(){
+        BodyPannel.removeAll();
+        ItemFormPannel itemPannel=new ItemFormPannel();
+        itemPannel.setSize(BodyPannel.getWidth(), BodyPannel.getHeight());
+        BodyPannel.add(itemPannel);
         BodyPannel.repaint();
         BodyPannel.revalidate();
     }
