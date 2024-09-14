@@ -4,6 +4,12 @@
  */
 package view;
 
+import controller.ItemController;
+import dto.ItemDto;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author vinod
@@ -13,8 +19,12 @@ public class ItemFormPannel extends javax.swing.JPanel {
     /**
      * Creates new form ItemFormPannel
      */
+    private final ItemController ITEM_CONTROLLER;
+    
     public ItemFormPannel() {
-        initComponents();
+      ITEM_CONTROLLER = new ItemController();
+      initComponents();
+      loadTable();
     }
 
     /**
@@ -235,4 +245,26 @@ public class ItemFormPannel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+ private void loadTable() {
+        String columns[] = {"Item Code", "Description", "Pack Size", "Unit Price", "Qty on Hand"};
+        DefaultTableModel dtm = new DefaultTableModel(columns, 0) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+            
+        };
+        
+        try {
+            ArrayList<ItemDto> itemDtos = ITEM_CONTROLLER.getAllItems();
+            for (ItemDto itemDto : itemDtos) {
+                Object[] rowData = {itemDto.getItemCode(), itemDto.getDescription(), itemDto.getPackSize(), itemDto.getUnitPrice(), itemDto.getQoh()};
+                dtm.addRow(rowData);
+            }   
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+        jTable1.setModel(dtm);
+    }
+
 }
