@@ -111,4 +111,24 @@ public class CustomerModel {
         int affectedRows = statement.executeUpdate();
         return affectedRows > 0 ? "Success" : "Fail";
     }
+    
+     public String update(CustomerDto dto) throws SQLException, ClassNotFoundException{
+
+       Connection connection = DBConnection.getInstance().getConnection();
+       String sql = "UPDATE customer SET CustTitle = ?, CustName = ?, DOB = ?, salary = ?, CustAddress = ?, City = ?, Province = ?, PostalCode = ? WHERE CustId = ?";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, dto.getCustTitle());
+        statement.setString(2, dto.getCustName());
+        statement.setString(3, dto.getDOB());
+        statement.setDouble(4, dto.getSalary());
+        statement.setString(5, dto.getCustAddress());
+        statement.setString(6, dto.getCity());
+        statement.setString(7, dto.getProvince());
+        statement.setString(8, dto.getPostalCode());
+        statement.setString(9, dto.getCustID());
+
+        int resp = statement.executeUpdate();
+        return resp > 0 ? "Customer Updated Successfully" : "Failed Customer Update!";
+    }
 }

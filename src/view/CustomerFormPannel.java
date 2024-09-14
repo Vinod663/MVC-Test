@@ -403,7 +403,25 @@ public class CustomerFormPannel extends javax.swing.JPanel {
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-        // TODO add your handling code here:
+        CustomerDto dto=new CustomerDto();
+            dto.setCustID(idText.getText());
+            dto.setCustTitle(groupingMethod());
+            dto.setCustName(NameText.getText());
+            dto.setDOB((String)YearCombo.getSelectedItem()+"-"+(String)MonthCombo.getSelectedItem()+"-"+(String)DayCombo.getSelectedItem());
+            dto.setSalary(Double.parseDouble(SalaryText.getText()));
+            dto.setCustAddress(AddressText.getText());
+            dto.setCity(CityText.getText());
+            dto.setProvince(ProvinceText.getText());
+            dto.setPostalCode(PostalCodeText.getText());
+             
+         try {
+            String resp = CUSTOMER_CONTROLLER.updateCustomer(dto);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            clearForm();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed

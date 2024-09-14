@@ -34,4 +34,9 @@ public class CustomerController {
       String result= customerModel.delete(id);
       return result;
     }
+    
+    public String updateCustomer(CustomerDto custDto) throws SQLException, ClassNotFoundException{
+        String resp = customerModel.update(custDto);
+        return resp;
+    }
 }
