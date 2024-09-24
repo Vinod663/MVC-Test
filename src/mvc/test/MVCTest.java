@@ -7,6 +7,7 @@ package mvc.test;
 import db.DBConnection;
 import java.sql.SQLException;
 import view.CustomerLayout;
+import view.OrderFormPannel;
 
 /**
  *
@@ -20,6 +21,7 @@ public class MVCTest {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         DBConnection.getInstance().getConnection();
         new CustomerLayout().setVisible(true);
+        new OrderFormPannel().setVisible(true);
     }
     
 }

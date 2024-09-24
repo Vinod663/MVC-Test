@@ -34,6 +34,7 @@ public class CustomerLayout extends javax.swing.JFrame {
         NavigationPannel = new javax.swing.JPanel();
         ManageCustomerButton = new javax.swing.JButton();
         ManageItemButton = new javax.swing.JButton();
+        ManageItemButton1 = new javax.swing.JButton();
         BodyPannel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +72,14 @@ public class CustomerLayout extends javax.swing.JFrame {
             }
         });
 
+        ManageItemButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ManageItemButton1.setText("Order Form");
+        ManageItemButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManageItemButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout NavigationPannelLayout = new javax.swing.GroupLayout(NavigationPannel);
         NavigationPannel.setLayout(NavigationPannelLayout);
         NavigationPannelLayout.setHorizontalGroup(
@@ -79,7 +88,8 @@ public class CustomerLayout extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(NavigationPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ManageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ManageItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ManageItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ManageItemButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         NavigationPannelLayout.setVerticalGroup(
@@ -89,6 +99,8 @@ public class CustomerLayout extends javax.swing.JFrame {
                 .addComponent(ManageCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ManageItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ManageItemButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -142,6 +154,10 @@ public class CustomerLayout extends javax.swing.JFrame {
         loadItemLayout();
     }//GEN-LAST:event_ManageItemButtonActionPerformed
 
+    private void ManageItemButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageItemButton1ActionPerformed
+        loadOrderayout();
+    }//GEN-LAST:event_ManageItemButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -194,12 +210,22 @@ public class CustomerLayout extends javax.swing.JFrame {
         BodyPannel.repaint();
         BodyPannel.revalidate();
     }
+    
+    private void loadOrderayout(){
+        BodyPannel.removeAll();
+        OrderFormPannel orderPannel=new OrderFormPannel();
+        orderPannel.setSize(BodyPannel.getWidth(), BodyPannel.getHeight());
+        BodyPannel.add(orderPannel);
+        BodyPannel.repaint();
+        BodyPannel.revalidate();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BodyPannel;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton ManageCustomerButton;
     private javax.swing.JButton ManageItemButton;
+    private javax.swing.JButton ManageItemButton1;
     private javax.swing.JPanel NavigationPannel;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
